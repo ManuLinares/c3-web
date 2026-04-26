@@ -4946,61 +4946,61 @@ sub modules are implicitly imported.</p>
 <p>Default function called when the asserts fails.</p>
 <h3 id="void-swapa-b"><code>void @swap(#a, #b)</code><a class="headerlink" href="#void-swapa-b" title="Permanent link">&para;</a></h3>
 <p>Swap values in <code>a</code> and <code>b</code>.</p>
-<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="err">@</span><span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">io</span><span class="o">::</span><span class="n">printfn</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// Prints 5</span>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nd">@swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">io</span><span class="o">::</span><span class="nf">printfn</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span> <span class="c1">// Prints 5</span>
 </code></pre></div>
 <h3 id="anycastany-v-type"><code>anycast(any v, $Type)</code><a class="headerlink" href="#anycastany-v-type" title="Permanent link">&para;</a></h3>
 <p>Optionally cast the value <code>v</code> to type <code>$Type*</code> on failure returns <code>TYPE_MISMATCH</code>.</p>
-<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">any</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kt">float</span><span class="o">*?</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">anycast</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="p">);</span><span class="w"> </span><span class="c1">// Will return TYPE_MISMATCH</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kt">int</span><span class="o">*?</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">anycast</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">);</span><span class="w">     </span><span class="c1">// Works!</span>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">int</span> <span class="n">b</span><span class="p">;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">any</span> <span class="n">a</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kt">float</span><span class="o">*?</span> <span class="n">c</span> <span class="o">=</span> <span class="nf">anycast</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="kt">float</span><span class="p">);</span> <span class="c1">// Will return TYPE_MISMATCH</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kt">int</span><span class="o">*?</span> <span class="n">d</span> <span class="o">=</span> <span class="nf">anycast</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>     <span class="c1">// Works!</span>
 </code></pre></div>
 <h3 id="void-unreachablestring-unreachable-statement-reached"><code>void unreachable($string = "Unreachable statement reached.")</code><a class="headerlink" href="#void-unreachablestring-unreachable-statement-reached" title="Permanent link">&para;</a></h3>
 <p>Mark a code path as unreachable.</p>
-<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">switch</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="n">foo</span><span class="p">();</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="n">bar</span><span class="p">();</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="k">default</span><span class="o">:</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="c1">// Should never happen.</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="n">unreachable</span><span class="p">(</span><span class="s">&quot;x should have been 0 or 1&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="k">case</span> <span class="mi">0</span><span class="err">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="nf">foo</span><span class="p">();</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="k">case</span> <span class="mi">1</span><span class="err">:</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="nf">bar</span><span class="p">();</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="k">default</span><span class="err">:</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        <span class="c1">// Should never happen.</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="nf">unreachable</span><span class="p">(</span><span class="s">&quot;x should have been 0 or 1&quot;</span><span class="p">);</span>
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">}</span>
 </code></pre></div>
 <p>On safe mode this will throw a runtime panic when reached. For release mode the
 compiler will assume this case never happens.</p>
 <h3 id="bitcastvalue-type"><code>bitcast(value, $Type)</code><a class="headerlink" href="#bitcastvalue-type" title="Permanent link">&para;</a></h3>
 <p>Do a bitcast of a value to <code>$Type</code>, requires that the types are of the same memory size.
-<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bitcast</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">);</span><span class="w"> </span><span class="c1">// y = 0x3f800000</span>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">float</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="nf">bitcast</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span> <span class="c1">// y = 0x3f800000</span>
 </code></pre></div></p>
 <h3 id="enum_by_nametype-enum_name"><code>enum_by_name($Type, enum_name)</code><a class="headerlink" href="#enum_by_nametype-enum_name" title="Permanent link">&para;</a></h3>
 <p>Optionally returns the enum value with the given name. <code>$Type</code> must be an enum. Returns <code>SearchResult.MISSING</code>
 on failure.
-<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">enum</span><span class="w"> </span><span class="n">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">ABC</span><span class="p">,</span><span class="w"> </span><span class="n">CDE</span><span class="p">,</span><span class="w"> </span><span class="n">EFG</span><span class="w"> </span><span class="p">}</span>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">enum</span> <span class="nc">Foo</span> <span class="p">{</span> <span class="nc">ABC</span><span class="p">,</span> <span class="nc">CDE</span><span class="p">,</span> <span class="nc">EFG</span> <span class="p">}</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">fn</span><span class="w"> </span><span class="kt">void</span><span class="o">?</span><span class="w"> </span><span class="n">test</span><span class="p">()</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">fn</span> <span class="kt">void</span><span class="o">?</span> <span class="nf">test</span><span class="p">()</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">{</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="n">Foo</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">enum_by_name</span><span class="p">(</span><span class="n">Foo</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;CDE&quot;</span><span class="p">)</span><span class="o">!</span><span class="p">;</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="c1">// same as Foo f = Foo.CDE;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="nc">Foo</span> <span class="n">f</span> <span class="o">=</span> <span class="nf">enum_by_name</span><span class="p">(</span><span class="nc">Foo</span><span class="p">,</span> <span class="s">&quot;CDE&quot;</span><span class="p">)</span><span class="o">!</span><span class="p">;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="c1">// same as Foo f = Foo.CDE;</span>
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">}</span>
 </code></pre></div></p>
 <h3 id="void-scopevariable-body"><code>void @scope(#variable; @body)</code><a class="headerlink" href="#void-scopevariable-body" title="Permanent link">&para;</a></h3>
 <p>Scopes a variable:</p>
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>int a = 3;
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>@scope(a)
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>{
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    a = 4;
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    a++;
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>};
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nd">@scope</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">{</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">a</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="n">a</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">};</span>
 <a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>// Prints a = 3
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>io::printfn(&quot;a = %d&quot;, a, b);
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1">// Prints a = 3</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="n">io</span><span class="o">::</span><span class="nf">printfn</span><span class="p">(</span><span class="s">&quot;a = %d&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
 </code></pre></div>
 <h3 id="less-greater-less_eq-greater_eq-equals"><code>less</code>, <code>greater</code>, <code>less_eq</code>, <code>greater_eq</code>, <code>equals</code><a class="headerlink" href="#less-greater-less_eq-greater_eq-equals" title="Permanent link">&para;</a></h3>
 <p>All macros take two values and compare them. Any type implementing <code>Type.less</code>
@@ -5021,16 +5021,16 @@ are implemented.</p>
 <code>malloc_aligned</code> adds an alignment, which must be a power of 2. Any pointer
 allocated using <code>malloc_aligned</code> must be freed using <code>free_aligned</code> rather
 the normal <code>free</code> or memory corruption may result.</p>
-<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kt">int</span><span class="p">[</span><span class="o">&lt;</span><span class="mi">16</span><span class="o">&gt;</span><span class="p">]</span><span class="o">*</span><span class="w"> </span><span class="n">data2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc_aligned</span><span class="p">(</span><span class="mi">16</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kt">int</span><span class="p">.</span><span class="k">sizeof</span><span class="p">,</span><span class="w"> </span><span class="mi">128</span><span class="p">);</span>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">char</span><span class="o">*</span> <span class="n">data</span> <span class="o">=</span> <span class="nb">malloc</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kt">int</span><span class="p">[</span><span class="o">&lt;</span><span class="mi">16</span><span class="o">&gt;</span><span class="p">]</span><span class="o">*</span> <span class="n">data2</span> <span class="o">=</span> <span class="nb">malloc_aligned</span><span class="p">(</span><span class="mi">16</span> <span class="o">*</span> <span class="kt">int</span><span class="o">.</span><span class="n">sizeof</span><span class="p">,</span> <span class="mi">128</span><span class="p">);</span>
 </code></pre></div>
 <h3 id="newtype-init-new_alignedtype-init"><code>new($Type, #init = ...), new_aligned($Type, #init = ...)</code><a class="headerlink" href="#newtype-init-new_alignedtype-init" title="Permanent link">&para;</a></h3>
 <p>This allocates a single element of $Type, returning the pointer. An optional initializer may be added, which
 immediately initializes the value to that of the initializer.</p>
 <p>If no initializer is provided, it is zero initialized. <code>new_aligned</code> works the same but for overaligned types, such allocations
 must be freed using <code>free_aligned</code></p>
-<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">int</span><span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="n">mem</span><span class="o">::</span><span class="nf">new</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nc">Foo</span><span class="o">*</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">mem</span><span class="o">::</span><span class="nf">new</span><span class="p">(</span><span class="nc">Foo</span><span class="p">,</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">});</span>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">int</span><span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="n">mem</span><span class="o">::</span><span class="nb">new</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nc">Foo</span><span class="o">*</span> <span class="n">foo</span> <span class="o">=</span> <span class="n">mem</span><span class="o">::</span><span class="nb">new</span><span class="p">(</span><span class="nc">Foo</span><span class="p">,</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">});</span>
 </code></pre></div>
 <h3 id="alloctype-alloc_alignedtype"><code>alloc($Type)</code>, <code>alloc_aligned($Type)</code><a class="headerlink" href="#alloctype-alloc_alignedtype" title="Permanent link">&para;</a></h3>
 <p>Allocates a single element of $Type, same as <code>new</code>, but without initializing the data.</p>
@@ -5038,7 +5038,7 @@ must be freed using <code>free_aligned</code></p>
 <p>Allocates a slice of <code>elements</code> number of elements, returning
 a slice of the given length. Elements are zero initialized. <code>new_array_aligned</code> is used for
 types that exceed standard alignment.</p>
-<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">int</span><span class="p">[]</span> <span class="n">ints</span> <span class="o">=</span> <span class="n">mem</span><span class="o">::</span><span class="nf">new_array</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span> <span class="c1">// Allocated int[100] on the heap, zero initialized.</span>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">int</span><span class="p">[]</span> <span class="n">ints</span> <span class="o">=</span> <span class="n">mem</span><span class="o">::</span><span class="nb">new_array</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span> <span class="c1">// Allocated int[100] on the heap, zero initialized.</span>
 </code></pre></div>
 <h3 id="alloc_arraytype-usz-elements-alloc_array_alignedtype-usz-elements"><code>alloc_array($Type, usz elements)</code>, <code>alloc_array_aligned($Type, usz elements)</code><a class="headerlink" href="#alloc_arraytype-usz-elements-alloc_array_alignedtype-usz-elements" title="Permanent link">&para;</a></h3>
 <p>Same as <code>new_array</code> and <code>new_array_aligned</code> but without initialization.</p>
@@ -5053,15 +5053,15 @@ pointers created using <code>calloc_aligned</code> or <code>alloc_aligned</code>
 must be freed using <code>free_aligned</code>.</p>
 <h3 id="scopedallocator-allocator-body"><code>@scoped(Allocator allocator; @body())</code><a class="headerlink" href="#scopedallocator-allocator-body" title="Permanent link">&para;</a></h3>
 <p>Swaps the current memory allocator for the duration of the call.</p>
-<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">DynamicArenaAllocator</span><span class="w"> </span><span class="n">dynamic_arena</span><span class="p">;</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">dynamic_arena</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="mi">1024</span><span class="p">);</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">mem</span><span class="o">::</span><span class="err">@</span><span class="n">scoped</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dynamic_arena</span><span class="p">)</span>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nc">DynamicArenaAllocator</span> <span class="n">dynamic_arena</span><span class="p">;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">dynamic_arena</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="mi">1024</span><span class="p">);</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">mem</span><span class="o">::</span><span class="nd">@scoped</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dynamic_arena</span><span class="p">)</span>
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">{</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="c1">// This allocation uses the dynamic arena</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="n">Foo</span><span class="o">*</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">Foo</span><span class="p">);</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="c1">// This allocation uses the dynamic arena</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="nc">Foo</span><span class="o">*</span> <span class="n">f</span> <span class="o">=</span> <span class="nb">malloc</span><span class="p">(</span><span class="nc">Foo</span><span class="p">);</span>
 <a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">};</span>
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c1">// Release any dynamic arena memory.</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="n">dynamic_arena</span><span class="p">.</span><span class="n">destroy</span><span class="p">();</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="n">dynamic_arena</span><span class="o">.</span><span class="nf">destroy</span><span class="p">();</span>
 </code></pre></div>
 <h3 id="void-tmallocusz-size-usz-alignment-0"><code>void* tmalloc(usz size, usz alignment = 0)</code><a class="headerlink" href="#void-tmallocusz-size-usz-alignment-0" title="Permanent link">&para;</a></h3>
 <p>Allocates memory using the temporary allocator. Panic on failure. It has type
@@ -5078,7 +5078,7 @@ the temporary allocator.</p>
 <div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nd">@pool</span><span class="p">()</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">{</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="c1">// This allocation uses the dynamic arena and is freed automatically at the end of the block</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="nc">Foo</span><span class="o">*</span> <span class="n">f</span> <span class="o">=</span> <span class="nf">tmalloc</span><span class="p">(</span><span class="nc">Foo</span><span class="p">);</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="nc">Foo</span><span class="o">*</span> <span class="n">f</span> <span class="o">=</span> <span class="nb">tmalloc</span><span class="p">(</span><span class="nc">Foo</span><span class="p">);</span>
 <a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">};</span>
 </code></pre></div>
 <h3 id="volatile_loadx"><code>@volatile_load(#x)</code><a class="headerlink" href="#volatile_loadx" title="Permanent link">&para;</a></h3>
@@ -5104,7 +5104,7 @@ must be a power of two. E.g. <code>mem::aligned_offset(17, 8)</code> would retur
 <p>Copies bytes from one pointer to another. It may optionally be set as volatile,
 in which case the copy may not be optimized away. Furthermore the source
 and destination alignment may be used.</p>
-<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nc">Foo</span><span class="o">*</span> <span class="n">f</span> <span class="o">=</span> <span class="nf">tmalloc</span><span class="p">(</span><span class="n">data_size</span><span class="p">);</span>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nc">Foo</span><span class="o">*</span> <span class="n">f</span> <span class="o">=</span> <span class="nb">tmalloc</span><span class="p">(</span><span class="n">data_size</span><span class="p">);</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">mem</span><span class="o">::</span><span class="nf">copy</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">slice</span><span class="o">.</span><span class="n">ptr</span><span class="p">,</span> <span class="n">size</span><span class="p">);</span>
 </code></pre></div>
 <h3 id="void-setvoid-dst-char-val-usz-len-usz-dst_align-0-bool-is_volatile-false"><code>void set(void* dst, char val, usz len, usz $dst_align = 0, bool $is_volatile = false)</code><a class="headerlink" href="#void-setvoid-dst-char-val-usz-len-usz-dst_align-0-bool-is_volatile-false" title="Permanent link">&para;</a></h3>
@@ -5113,9 +5113,9 @@ and destination alignment may be used.</p>
 <p>Sets bytes to zero. This operation may be aligned and/or volatile. See the <code>copy</code> method.</p>
 <h3 id="clonevalue"><code>@clone(&amp;value)</code><a class="headerlink" href="#clonevalue" title="Permanent link">&para;</a></h3>
 <p>Makes a shallow copy of a value using the regular allocator.</p>
-<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">Foo</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nc">Foo</span> <span class="n">f</span> <span class="o">=</span> <span class="o">...</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="k">return</span><span class="w"> </span><span class="err">@</span><span class="n">clone</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="k">return</span> <span class="nd">@clone</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
 </code></pre></div>
 <h3 id="tclonevalue"><code>@tclone(&amp;value)</code><a class="headerlink" href="#tclonevalue" title="Permanent link">&para;</a></h3>
 <p>Same as <code>@clone</code> but uses the temporary allocator.</p>
@@ -5130,9 +5130,9 @@ and destination alignment may be used.</p>
 <h3 id="any_to_intany-v-type"><code>any_to_int(any v, $Type)</code><a class="headerlink" href="#any_to_intany-v-type" title="Permanent link">&para;</a></h3>
 <p>Returns an optional value of <code>$Type</code> if the any value losslessly
 may be converted into the given type. Returns either <code>VALUE_OUT_OF_RANGE</code> or <code>VALUE_OUT_OF_UNSIGNED_RANGE</code> otherwise.</p>
-<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">any</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="mi">128</span><span class="p">;</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kt">short</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">any_to_int</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="kt">short</span><span class="p">)</span><span class="o">!!</span><span class="p">;</span><span class="w"> </span><span class="c1">// Works</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">ichar</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">any_to_int</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">ichar</span><span class="p">)</span><span class="o">!!</span><span class="p">;</span><span class="w"> </span><span class="c1">// Panics VALUE_OUT_OF_RANGE</span>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kt">any</span> <span class="n">v</span> <span class="o">=</span> <span class="o">&amp;&amp;</span><span class="mi">128</span><span class="p">;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kt">short</span> <span class="n">y</span> <span class="o">=</span> <span class="nf">any_to_int</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="kt">short</span><span class="p">)</span><span class="o">!!</span><span class="p">;</span> <span class="c1">// Works</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="kt">ichar</span> <span class="n">z</span> <span class="o">=</span> <span class="nf">any_to_int</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="kt">ichar</span><span class="p">)</span><span class="o">!!</span><span class="p">;</span> <span class="c1">// Panics VALUE_OUT_OF_RANGE</span>
 </code></pre></div>
 <h2 id="stdcorestrconv"><code>std::core::str::conv</code><a class="headerlink" href="#stdcorestrconv" title="Permanent link">&para;</a></h2>
 <h3 id="usz-char32_to_utf8char32-c-char-output"><code>usz? char32_to_utf8(Char32 c, char[] output)</code><a class="headerlink" href="#usz-char32_to_utf8char32-c-char-output" title="Permanent link">&para;</a></h3>
@@ -5164,16 +5164,16 @@ moving the output pointer 1 or 2 steps.</p>
 </div>
 <h3 id="string-treadlinestream-iostdin"><code>String? treadline(stream = io::stdin())</code><a class="headerlink" href="#string-treadlinestream-iostdin" title="Permanent link">&para;</a></h3>
 <p>Read a <code>String?</code> from a file stream which is standard input (stdin) by default, Reads to the next newline character <code>\n</code> or to the end of stream. <code>Treadline</code> returns an <a href="../language-common/optionals-essential/#what-is-an-optional">Optional</a> string. The temporary allocator is used by <code>treadline</code>, in contrast the <code>readline</code> can be used with any allocator.</p>
-<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">import</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">io</span><span class="p">;</span>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">import</span> <span class="n">std</span><span class="o">::</span><span class="n">io</span><span class="p">;</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="n">fn</span><span class="w"> </span><span class="kt">void</span><span class="o">?</span><span class="w"> </span><span class="n">hello_name</span><span class="p">()</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="k">fn</span> <span class="kt">void</span><span class="o">?</span> <span class="nf">hello_name</span><span class="p">()</span>
 <a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="p">{</span>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="n">String</span><span class="o">?</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">io</span><span class="o">::</span><span class="n">treadline</span><span class="p">();</span>
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">catch</span><span class="w"> </span><span class="n">excuse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">excuse</span><span class="o">?</span><span class="p">;</span>
-<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    <span class="nc">String</span><span class="o">?</span> <span class="n">name</span> <span class="o">=</span> <span class="n">io</span><span class="o">::</span><span class="nf">treadline</span><span class="p">();</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>    <span class="k">if</span> <span class="p">(</span><span class="k">catch</span> <span class="n">excuse</span> <span class="o">=</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>        <span class="k">return</span> <span class="n">excuse</span><span class="o">?</span><span class="p">;</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>    <span class="p">}</span>
 <a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>
-<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">    </span><span class="n">io</span><span class="o">::</span><span class="n">printfn</span><span class="p">(</span><span class="s">&quot;Hello %s! Hope you have a great day&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>    <span class="n">io</span><span class="o">::</span><span class="nf">printfn</span><span class="p">(</span><span class="s">&quot;Hello %s! Hope you have a great day&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
 <a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="p">}</span>
 </code></pre></div>
 <div class="admonition note">
@@ -5297,15 +5297,15 @@ The <code>fprintn</code> variant appends a newline.</p>
 <p>Flush a file, based on the libc function.</p>
 <h2 id="stdcollectionslist-type"><code>std::collections::list{ Type }</code><a class="headerlink" href="#stdcollectionslist-type" title="Permanent link">&para;</a></h2>
 <p>Generic list module, elements are of <code>Type</code>.</p>
-<div class="language-c highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">import</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">collections</span><span class="o">::</span><span class="n">list</span><span class="p">;</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="n">alias</span><span class="w"> </span><span class="n">MyIntList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">{</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">};</span>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">import</span> <span class="n">std</span><span class="o">::</span><span class="n">collections</span><span class="o">::</span><span class="n">list</span><span class="p">;</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="k">alias</span> <span class="nc">MyIntList</span> <span class="o">=</span> <span class="nc">List</span><span class="p">{</span> <span class="kt">int</span> <span class="p">};</span>
 <a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="p">...</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="o">...</span>
 <a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
-<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="n">MyIntList</span><span class="w"> </span><span class="n">list</span><span class="p">;</span>
-<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="n">list</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="n">mem</span><span class="p">);</span><span class="w"> </span><span class="c1">// heap allocated</span>
-<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="n">list</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
-<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="n">list</span><span class="p">.</span><span class="n">free</span><span class="p">();</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="nc">MyIntList</span> <span class="n">list</span><span class="p">;</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="n">list</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="n">mem</span><span class="p">);</span> <span class="c1">// heap allocated</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="n">list</span><span class="o">.</span><span class="nf">push</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="n">list</span><span class="o">.</span><span class="nb">free</span><span class="p">();</span>
 </code></pre></div>
 <h3 id="listpushself-type-element-append"><code>List.push(&amp;self, Type element)</code>, <code>append(...)</code><a class="headerlink" href="#listpushself-type-element-append" title="Permanent link">&para;</a></h3>
 <p>Append a single value to the list.</p>
@@ -5357,7 +5357,7 @@ The <code>fprintn</code> variant appends a newline.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="April 26, 2026 03:08:19 UTC">April 26, 2026 03:08:19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="April 26, 2026 19:01:41 UTC">April 26, 2026 19:01:41</span>
   </span>
 
     

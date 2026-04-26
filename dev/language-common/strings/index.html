@@ -3031,119 +3031,102 @@ The <code>WString</code> type is similar to <code>ZString</code> but uses <code>
 </code></pre></div>
 <div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">fn</span> <span class="nc">WString</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_wstring</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nc">Allocator</span> <span class="n">allocator</span><span class="p">)</span>
 </code></pre></div>
-<p>```c3 implementation
-fn String String.free(&amp;s, Allocator allocator = mem)
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>```c3 implementation
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>fn String String.tcopy(s) =&gt; s.copy(tmem) @inline;
-</code></pre></div></p>
-<p>```c3 implementation
-fn String String.copy(s, Allocator allocator = mem)
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>```c3 implementation
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>fn String String.strip_end(string, String needle);
-</code></pre></div></p>
-<p>```c3 implementation
-fn String String.strip(string, String needle);
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>```c3 implementation
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>fn String String.trim(string, String to_trim);
-</code></pre></div></p>
-<p>```c3 implementation
-fn bool String.contains(string, String needle);
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>```c3 implementation
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>fn bool String.starts_with(string, String needle);
-</code></pre></div></p>
-<p>```c3 implementation
-fn bool String.ends_with(string, String needle);
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>```c3 implementation
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>fn usz? String.index_of_char(s, char needle);
-</code></pre></div></p>
-<p>```c3 implementation
-fn usz? String.index_of_char_from(s, char needle, usz start_index);
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>```c3 implementation
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>fn usz? String.index_of(s, String needle)
-</code></pre></div></p>
-<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">fn</span> <span class="kt">usz</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">rindex_of</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nc">String</span> <span class="n">needle</span><span class="p">)</span>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">fn</span> <span class="nc">String</span> <span class="nc">String</span><span class="o">.</span><span class="nb">free</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">,</span> <span class="nc">Allocator</span> <span class="n">allocator</span> <span class="o">=</span> <span class="n">mem</span><span class="p">)</span>
 </code></pre></div>
-<p>```c3 implementation
-fn String[] String.split(s, String needle, usz max = 0, Allocator allocator = mem);
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>```c3 implementation
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>fn String String.new_split(s, String needle, usz max = 0) =&gt; s.split(needle, max, mem) @inline;
-</code></pre></div></p>
-<p>```c3 implementation
-// temporary String split
-fn String String.tsplit(s, String needle, usz max = 0) =&gt; s.split(needle, max, tmem);
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>```c3 implementation
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>fn String String.tconcat(s1, String s2);
-</code></pre></div></p>
-<p><code>c3 implementation
-fn String String.tconcat(s1, String s2) =&gt; s1.concat(s2, tmem);
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>```c3 implementation
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>fn WString? String.to_temp_wstring(s) =&gt; s.to_wstring(tmem);
-</code></pre></div></code>c3 implementation
-fn WString? String.to_new_wstring(s) =&gt; s.to_wstring(mem);
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>```c3 implementation
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>fn int128? String.to_int128(s, int base = 10) =&gt; s.to_integer(int128, base);
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">fn</span> <span class="nc">String</span> <span class="nc">String</span><span class="o">.</span><span class="nf">tcopy</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">copy</span><span class="p">(</span><span class="n">tmem</span><span class="p">)</span> <span class="nd">@inline</span><span class="p">;</span>
 </code></pre></div>
-<code>c3 implementation
-fn long? String.to_long(s, int base = 10) =&gt; s.to_integer(long, base);
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>```c3 implementation
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>fn int? String.to_int(s, int base = 10) =&gt; s.to_integer(int, base);
-</code></pre></div></code>c3 implementation
-fn short? String.to_short(s, int base = 10) =&gt; s.to_integer(short, base);
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>```c3 implementation
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>fn ichar? String.to_ichar(s, int base = 10) =&gt; s.to_integer(ichar, base);
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">fn</span> <span class="nc">String</span> <span class="nc">String</span><span class="o">.</span><span class="nf">copy</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nc">Allocator</span> <span class="n">allocator</span> <span class="o">=</span> <span class="n">mem</span><span class="p">)</span>
 </code></pre></div>
-<code>c3 implementation
-fn uint128? String.to_uint128(s, int base = 10) =&gt; s.to_integer(uint128, base);
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>```c3 implementation
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>fn ulong? String.to_ulong(s, int base = 10) =&gt; s.to_integer(ulong, base);
-</code></pre></div></code>c3 implementation
-fn uint? String.to_uint(s, int base = 10) =&gt; s.to_integer(uint, base);
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>```c3 implementation
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>fn ushort? String.to_ushort(s, int base = 10) =&gt; s.to_integer(ushort, base);
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">fn</span> <span class="nc">String</span> <span class="nc">String</span><span class="o">.</span><span class="nf">strip_end</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="nc">String</span> <span class="n">needle</span><span class="p">);</span>
 </code></pre></div>
-<code>c3 implementation
-fn char? String.to_uchar(s, int base = 10) =&gt; s.to_integer(char, base);
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>```c3 implementation
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>fn double? String.to_double(s) =&gt; s.to_real(double);
-</code></pre></div></code>c3 implementation
-fn float? String.to_float(s) =&gt; s.to_real(float);
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>```c3 implementation
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>fn String String.new_ascii_to_upper(s, Allocator allocator = mem);
-</code></pre></div></p>
-<p>```c3 implementation
-fn Char16[]? String.to_new_utf16(s, Allocator allocator = mem);
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>```c3 implementation
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>fn Char16[]? String.to_temp_utf16(s);
-</code></pre></div></p>
-<p>```c3 implementation
-fn Char32[]? String.to_utf32(s, Allocator allocator);
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>```c3 implementation
-<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>fn Char32[]? String.to_new_utf32(s) =&gt; s.to_utf32(mem) @inline;
-</code></pre></div></p>
-<p>```c3 implementation
-fn Char32[]? String.to_temp_utf32(s) =&gt; s.to_utf32(tmem) @inline;
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>```c3 implementation
-<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>fn WString? String.to_wstring(s, Allocator allocator);
-</code></pre></div></p>
-<p><div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">fn</span> <span class="nc">WString</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_new_wstring</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">to_wstring</span><span class="p">(</span><span class="n">mem</span><span class="p">);</span>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">fn</span> <span class="nc">String</span> <span class="nc">String</span><span class="o">.</span><span class="nf">strip</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="nc">String</span> <span class="n">needle</span><span class="p">);</span>
 </code></pre></div>
-<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">fn</span> <span class="nc">WString</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_temp_wstring</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">to_wstring</span><span class="p">(</span><span class="n">tmem</span><span class="p">);</span>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">fn</span> <span class="nc">String</span> <span class="nc">String</span><span class="o">.</span><span class="nf">trim</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="nc">String</span> <span class="n">to_trim</span><span class="p">);</span>
 </code></pre></div>
-<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">fn</span> <span class="nc">StringIterator</span> <span class="nc">String</span><span class="o">.</span><span class="nf">iterator</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">fn</span> <span class="kt">bool</span> <span class="nc">String</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="nc">String</span> <span class="n">needle</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">fn</span> <span class="kt">bool</span> <span class="nc">String</span><span class="o">.</span><span class="nf">starts_with</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="nc">String</span> <span class="n">needle</span><span class="p">);</span>
+</code></pre></div>
+<p><div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">fn</span> <span class="kt">bool</span> <span class="nc">String</span><span class="o">.</span><span class="nf">ends_with</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="nc">String</span> <span class="n">needle</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">fn</span> <span class="kt">usz</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">index_of_char</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="kt">char</span> <span class="n">needle</span><span class="p">);</span>
+</code></pre></div></p>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">fn</span> <span class="kt">usz</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">index_of_char_from</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="kt">char</span> <span class="n">needle</span><span class="p">,</span> <span class="kt">usz</span> <span class="n">start_index</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">fn</span> <span class="kt">usz</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">index_of</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nc">String</span> <span class="n">needle</span><span class="p">)</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">fn</span> <span class="kt">usz</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">rindex_of</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nc">String</span> <span class="n">needle</span><span class="p">)</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">fn</span> <span class="nc">String</span><span class="p">[]</span> <span class="nc">String</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nc">String</span> <span class="n">needle</span><span class="p">,</span> <span class="kt">usz</span> <span class="n">max</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nc">Allocator</span> <span class="n">allocator</span> <span class="o">=</span> <span class="n">mem</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">fn</span> <span class="nc">String</span> <span class="nc">String</span><span class="o">.</span><span class="nf">new_split</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nc">String</span> <span class="n">needle</span><span class="p">,</span> <span class="kt">usz</span> <span class="n">max</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="n">needle</span><span class="p">,</span> <span class="n">max</span><span class="p">,</span> <span class="n">mem</span><span class="p">)</span> <span class="nd">@inline</span><span class="p">;</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1">// temporary String split</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="k">fn</span> <span class="nc">String</span> <span class="nc">String</span><span class="o">.</span><span class="nf">tsplit</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nc">String</span> <span class="n">needle</span><span class="p">,</span> <span class="kt">usz</span> <span class="n">max</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="n">needle</span><span class="p">,</span> <span class="n">max</span><span class="p">,</span> <span class="n">tmem</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">fn</span> <span class="nc">String</span> <span class="nc">String</span><span class="o">.</span><span class="nf">tconcat</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="nc">String</span> <span class="n">s2</span><span class="p">);</span>
+</code></pre></div>
+<p><div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">fn</span> <span class="nc">String</span> <span class="nc">String</span><span class="o">.</span><span class="nf">tconcat</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="nc">String</span> <span class="n">s2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s1</span><span class="o">.</span><span class="nf">concat</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span> <span class="n">tmem</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">fn</span> <span class="nc">WString</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_temp_wstring</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">to_wstring</span><span class="p">(</span><span class="n">tmem</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="k">fn</span> <span class="nc">WString</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_new_wstring</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">to_wstring</span><span class="p">(</span><span class="n">mem</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">fn</span> <span class="kt">int128</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_int128</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="kt">int</span> <span class="n">base</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">to_integer</span><span class="p">(</span><span class="kt">int128</span><span class="p">,</span> <span class="n">base</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">fn</span> <span class="kt">long</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_long</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="kt">int</span> <span class="n">base</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">to_integer</span><span class="p">(</span><span class="kt">long</span><span class="p">,</span> <span class="n">base</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">fn</span> <span class="kt">int</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_int</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="kt">int</span> <span class="n">base</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">to_integer</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="n">base</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="k">fn</span> <span class="kt">short</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_short</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="kt">int</span> <span class="n">base</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">to_integer</span><span class="p">(</span><span class="kt">short</span><span class="p">,</span> <span class="n">base</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="k">fn</span> <span class="kt">ichar</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_ichar</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="kt">int</span> <span class="n">base</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">to_integer</span><span class="p">(</span><span class="kt">ichar</span><span class="p">,</span> <span class="n">base</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="k">fn</span> <span class="kt">uint128</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_uint128</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="kt">int</span> <span class="n">base</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">to_integer</span><span class="p">(</span><span class="kt">uint128</span><span class="p">,</span> <span class="n">base</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="k">fn</span> <span class="kt">ulong</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_ulong</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="kt">int</span> <span class="n">base</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">to_integer</span><span class="p">(</span><span class="kt">ulong</span><span class="p">,</span> <span class="n">base</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="k">fn</span> <span class="kt">uint</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_uint</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="kt">int</span> <span class="n">base</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">to_integer</span><span class="p">(</span><span class="kt">uint</span><span class="p">,</span> <span class="n">base</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="k">fn</span> <span class="kt">ushort</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_ushort</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="kt">int</span> <span class="n">base</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">to_integer</span><span class="p">(</span><span class="kt">ushort</span><span class="p">,</span> <span class="n">base</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="k">fn</span> <span class="kt">char</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_uchar</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="kt">int</span> <span class="n">base</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">to_integer</span><span class="p">(</span><span class="kt">char</span><span class="p">,</span> <span class="n">base</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="k">fn</span> <span class="kt">double</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_double</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">to_real</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="k">fn</span> <span class="kt">float</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_float</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">to_real</span><span class="p">(</span><span class="kt">float</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="k">fn</span> <span class="nc">String</span> <span class="nc">String</span><span class="o">.</span><span class="nf">new_ascii_to_upper</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nc">Allocator</span> <span class="n">allocator</span> <span class="o">=</span> <span class="n">mem</span><span class="p">);</span>
+</code></pre></div></p>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="k">fn</span> <span class="nc">Char16</span><span class="p">[]</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_new_utf16</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nc">Allocator</span> <span class="n">allocator</span> <span class="o">=</span> <span class="n">mem</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="k">fn</span> <span class="nc">Char16</span><span class="p">[]</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_temp_utf16</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="k">fn</span> <span class="nc">Char32</span><span class="p">[]</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_utf32</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nc">Allocator</span> <span class="n">allocator</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="k">fn</span> <span class="nc">Char32</span><span class="p">[]</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_new_utf32</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">to_utf32</span><span class="p">(</span><span class="n">mem</span><span class="p">)</span> <span class="nd">@inline</span><span class="p">;</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="k">fn</span> <span class="nc">Char32</span><span class="p">[]</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_temp_utf32</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">to_utf32</span><span class="p">(</span><span class="n">tmem</span><span class="p">)</span> <span class="nd">@inline</span><span class="p">;</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="k">fn</span> <span class="nc">WString</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_wstring</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nc">Allocator</span> <span class="n">allocator</span><span class="p">);</span>
+</code></pre></div>
+<p><div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="k">fn</span> <span class="nc">WString</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_new_wstring</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">to_wstring</span><span class="p">(</span><span class="n">mem</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="k">fn</span> <span class="nc">WString</span><span class="o">?</span> <span class="nc">String</span><span class="o">.</span><span class="nf">to_temp_wstring</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">to_wstring</span><span class="p">(</span><span class="n">tmem</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="k">fn</span> <span class="nc">StringIterator</span> <span class="nc">String</span><span class="o">.</span><span class="nf">iterator</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
 </code></pre></div></p>
 <h3 id="zstring-member-functions"><code>ZString</code> Member Functions<a class="headerlink" href="#zstring-member-functions" title="Permanent link">&para;</a></h3>
-<p>```c3 implementation
-fn String ZString.str_view(str);
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>```c3 implementation
-<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>fn usz ZString.char_len(str);
-</code></pre></div></p>
-<p>```c3 implementation
-fn usz ZString.len(str);</p>
-<p><div class="language-text highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>```c3 implementation
-<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>fn ZString String.zstr_copy(s, Allocator allocator = mem)
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="k">fn</span> <span class="nc">String</span> <span class="nc">ZString</span><span class="o">.</span><span class="nf">str_view</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
 </code></pre></div>
-<code>c3 implementation
-fn ZString String.zstr_tcopy(s) =&gt; s.zstr_copy(tmem) @inline;</code></p>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="k">fn</span> <span class="kt">usz</span> <span class="nc">ZString</span><span class="o">.</span><span class="nf">char_len</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+</code></pre></div>
+<p><div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="k">fn</span> <span class="kt">usz</span> <span class="nc">ZString</span><span class="o">.</span><span class="nf">len</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="k">fn</span> <span class="nc">ZString</span> <span class="nc">String</span><span class="o">.</span><span class="nf">zstr_copy</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nc">Allocator</span> <span class="n">allocator</span> <span class="o">=</span> <span class="n">mem</span><span class="p">)</span>
+</code></pre></div>
+<div class="language-c3 highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="k">fn</span> <span class="nc">ZString</span> <span class="nc">String</span><span class="o">.</span><span class="nf">zstr_tcopy</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">s</span><span class="o">.</span><span class="nf">zstr_copy</span><span class="p">(</span><span class="n">tmem</span><span class="p">)</span> <span class="nd">@inline</span><span class="p">;</span>
+</code></pre></div></p>
 
 
 
@@ -3164,7 +3147,7 @@ fn ZString String.zstr_tcopy(s) =&gt; s.zstr_copy(tmem) @inline;</code></p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="April 26, 2026 03:08:19 UTC">April 26, 2026 03:08:19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="April 26, 2026 19:01:41 UTC">April 26, 2026 19:01:41</span>
   </span>
 
     

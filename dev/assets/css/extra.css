@@ -135,9 +135,52 @@
   margin: 0 !important;
 }
 
+/* Documentation Tables - Minimalist border-bottom style */
+.md-typeset table:not([class]) {
+  border: none !important;
+  border-collapse: collapse !important;
+  box-shadow: none !important;
+}
+
+.md-typeset thead {
+  border: none !important;
+}
+
+.md-typeset tr {
+  border: none !important;
+}
+
+.md-typeset th {
+  border: none !important;
+  border-bottom: 2px solid var(--md-default-fg-color--lightest) !important;
+  padding: 0.5rem 0.5rem 2px 0.5rem !important;
+  background-color: transparent !important;
+}
+
+.md-typeset td {
+  border: none !important;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest) !important;
+  padding: 0.4rem 0.5rem 1px 0.5rem !important;
+}
+
+.md-typeset tr:last-child td {
+  border-bottom: none !important;
+}
+
 .lp-hero-logo {
   transition: filter 0.2s ease-in-out;
   color: transparent;
+}
+
+/* Syntax Highlighting Overrides - Linking to your GitHub theme variables below */
+
+.highlight .kt, 
+.highlight .nc { 
+  color: var(--md-code-hl-type-color) !important; /* Maps to your new green color */
+}
+
+.highlight .nf { 
+  color: var(--md-code-hl-function-color) !important; /* Maps to your purple/function color */
 }
 
 .lp-hero-logo:hover {
@@ -434,6 +477,7 @@
   --md-code-hl-name-color: #c9d1d9;
   --md-code-hl-variable-color: #ffa657;
   --md-code-hl-function-color: #d2a8ff;
+  --md-code-hl-type-color: #7ee787;
   --md-code-hl-constant-color: #79c0ff;
   --md-code-hl-operator-color: #ff7b72;
   --md-code-hl-punctuation-color: #c9d1d9;
@@ -449,6 +493,7 @@
   --md-code-hl-name-color: #24292f;
   --md-code-hl-variable-color: #953800;
   --md-code-hl-function-color: #8250df;
+  --md-code-hl-type-color: #116329;
   --md-code-hl-constant-color: #0550ae;
   --md-code-hl-operator-color: #cf222e;
   --md-code-hl-punctuation-color: #24292f;
