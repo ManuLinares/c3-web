@@ -1,5 +1,13 @@
 <!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="C3 is the ergonomic, safe evolution of C. Familiar syntax, full ABI compatibility, optionals, slices, contracts and zero-cost abstractions."><meta name=author content="Christoffer Lernö"><link href=https://manulinares.github.io/c3-web/dev/blog/2025/04/21/c3-goes-game-and-maths-friendly-with-operator-overloading/ rel=canonical><link href=../../14/c3-operator-overloading-is-coming-in-071/ rel=prev><link href=../../30/c3-071---operator-overloading-here-we-come/ rel=next><link rel=icon href=../../../../../assets/favicon.svg><meta name=generator content="mkdocs-1.6.1, mkdocs-material-9.7.6"><title>C3 goes game and maths friendly with operator overloading - C3 Programming Language</title><link rel=stylesheet href=../../../../../assets/stylesheets/main.484c7ddc.min.css><link rel=stylesheet href=../../../../../assets/stylesheets/palette.ab4e12ef.min.css><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback"><style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style><link rel=stylesheet href=../../../../../assets/css/extra.css><script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script><script defer src=https://static.cloudflareinsights.com/beacon.min.js data-cf-beacon='{"token": "044a1051452343c4acb523cbe625b1c6", "spa": true}'>
-</script><script>"undefined"!=typeof __md_analytics&&__md_analytics()</script><script>
+</script><script>"undefined"!=typeof __md_analytics&&__md_analytics()</script><style>
+    /* flash prevention: Immediately apply dark background if OS is dark */
+    :root { color-scheme: light dark; }
+    @media (prefers-color-scheme: dark) {
+      html:not([data-md-color-scheme="default"]) { background-color: #1e293b; }
+    }
+    /* If theme is already set to slate, ensure background is dark */
+    [data-md-color-scheme="slate"] { background-color: #1e293b; }
+  </style><script>
     /* Try fix first frame flash */
     (function() {
       var palette = localStorage.getItem("__palette");
